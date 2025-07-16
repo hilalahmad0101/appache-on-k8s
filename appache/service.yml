@@ -1,0 +1,14 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: appache-service
+  namespace: appache1
+spec:
+  selector:
+    app: appache1
+  type: ClusterIP
+  ports:
+    - name: appache1
+      port: 80
+      targetPort: 80
+      protocol: TCP

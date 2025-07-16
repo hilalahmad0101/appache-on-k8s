@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: appache-dep
+  namespace: appache1
+  labels:
+    app: appache1
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: appache1
+  template:
+    metadata:
+      labels:
+        app: appache1
+    spec:
+      containers:
+        - name: appache1
+          image: httpd:latest
+          resources:
+            requests:
+              cpu: 100m
+              memory: 128Mi
+            limits:
+              cpu: 200m
+              memory: 256Mi
