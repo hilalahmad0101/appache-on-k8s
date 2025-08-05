@@ -1,0 +1,5 @@
+kind create cluster --name hilalahmad --config .\config2.yml
+
+kubectl config current-context
+
+kubectl config use-context nameofcsluter
